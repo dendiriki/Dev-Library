@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamentals of HTML | DevLibrary</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/app.js" defer></script>
+</head>
+
+<body id="top">
+  <!-- Shared navigation: repeated in each standalone page so no server is needed. -->
+  <header class="site-header">
+    <nav class="navbar section-shell" aria-label="Main navigation">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">D</span>
+        <span>Dev<span class="brand-accent">Library</span><small>PERSONAL KNOWLEDGE BASE</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#learning-path">Learning Path</a>
+        <a class="active" href="Fundamentals_of_HTML.html">HTML</a>
+        <a href="Fundamentals_of_CSS.html">CSS</a>
+        <a class="nav-cta" href="../index.html#learning-path">All Chapters ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <header class="lesson-hero">
+      <div class="section-shell">
+        <p class="breadcrumb"><a href="../index.html">Home</a> / Learning Path / Fundamentals of HTML</p>
+        <p class="eyebrow">CHAPTER 02 · HTML FOUNDATIONS</p>
+        <h1>Fundamentals of HTML</h1>
+        <p>Understand how HTML describes content, builds document structure, and gives meaning to every part of a
+          webpage.</p>
+      </div>
+    </header>
+
+    <div class="section-shell lesson-layout">
+      <article class="lesson-content">
+        <section class="lesson-section reveal" id="overview">
+          <p class="eyebrow">01 · THE BIG PICTURE</p>
+          <h2>What is HTML?</h2>
+          <p><strong>HTML (HyperText Markup Language)</strong> adalah bahasa markup yang digunakan untuk menyusun
+            struktur dan makna konten halaman web. HTML memberi tahu browser apakah suatu konten merupakan judul,
+            paragraf, tautan, gambar, tabel, atau formulir.</p>
+          <p>HTML bukan bahasa pemrograman seperti JavaScript atau Python. HTML tidak menjalankan logika seperti
+            perulangan atau perhitungan. HTML mendeskripsikan konten; CSS mengatur tampilannya; JavaScript menambahkan
+            perilaku interaktif.</p>
+          <figure class="diagram-card" style="margin: 22px 0;">
+            <img src="../assets/images/html-css-js-roles.svg"
+              alt="Diagram peran HTML untuk struktur, CSS untuk tampilan, dan JavaScript untuk perilaku website."
+              style="display:block;width:100%;height:auto;border-radius:12px;">
+            <figcaption class="diagram-caption" style="padding:10px 4px 0;">
+              Gambar 1. HTML, CSS, dan JavaScript memiliki tanggung jawab yang saling melengkapi.
+            </figcaption>
+          </figure>
+          <div class="concept-flow" aria-label="Peran HTML CSS dan JavaScript">
+            <div class="concept-node html-node"><strong>HTML </strong><span>Structure</span><small> What is on the
+                page?</small></div>
+            <div class="concept-plus">+</div>
+            <div class="concept-node css-node"><strong>CSS </strong><span>Presentation </span><small>How does it
+                look?</small></div>
+            <div class="concept-plus">+</div>
+            <div class="concept-node js-node"><strong>JavaScript </strong><span>Behavior </span><small>What can it
+                do?</small></div>
+          </div>
+          <div class="info-box"><strong>English breakdown:</strong> “HTML describes the structure and meaning of web
+            content.” <em>Describes</em> = menjelaskan/mendeskripsikan; <em>structure</em> = struktur; <em>meaning</em>
+            = makna; <em>content</em> = isi.</div>
+          <h3>What is the impact?</h3>
+          <p>Tanpa HTML, browser tidak memiliki struktur dokumen yang jelas. Dengan HTML, konten dapat dikenali, dibaca,
+            diberi styling oleh CSS, dan diakses oleh teknologi bantu seperti screen reader.</p>
+        </section>
+
+        <section class="lesson-section reveal" id="document-structure">
+          <p class="eyebrow">02 · DOCUMENT FOUNDATION</p>
+          <h2>HTML document structure</h2>
+          <p>Setiap halaman HTML umumnya memiliki kerangka dasar. Bagian <code>head</code> menyimpan informasi tentang
+            dokumen, sedangkan <code>body</code> berisi konten yang ditampilkan di halaman.</p>
+          <div class="code-block">
+            <button class="code-copy" type="button">Copy code</button>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;My First Page&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hello, world!&lt;/h1&gt;
+        &lt;p&gt;This is my webpage.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+          <figure class="diagram-card" style="margin: 22px 0;">
+            <img src="../assets/images/html-document-tree.svg"
+              alt="Pohon struktur dokumen HTML dari elemen html ke head dan body."
+              style="display:block;width:100%;height:auto;border-radius:12px;">
+            <figcaption class="diagram-caption" style="padding:10px 4px 0;">
+              Gambar 2. Struktur dokumen HTML berbentuk hierarki parent dan child.
+            </figcaption>
+          </figure>
+          <div class="diagram-card">
+            <h3>Visual: document tree</h3>
+            <p class="diagram-caption">HTML bersifat hierarkis: elemen dapat menjadi parent atau child dari elemen lain.
+            </p>
+            <div class="tree-diagram">
+              <div class="tree-node tree-root">html</div>
+              <div class="tree-branches">
+                <div class="tree-branch">
+                  <div class="tree-node tree-head">head</div>
+                  <div class="tree-child">meta</div>
+                  <div class="tree-child">title</div>
+                </div>
+                <div class="tree-branch">
+                  <div class="tree-node tree-body">body</div>
+                  <div class="tree-child">h1</div>
+                  <div class="tree-child">p</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3>Penjelasan setiap baris</h3>
+          <div class="lesson-table-wrap">
+            <table class="lesson-table">
+              <thead>
+                <tr>
+                  <th>Code</th>
+                  <th>Purpose / Fungsi</th>
+                  <th>Impact</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>&lt;!DOCTYPE html&gt;</code></td>
+                  <td>Mendeklarasikan dokumen sebagai HTML modern (HTML5).</td>
+                  <td>Browser menggunakan mode standar untuk merender halaman.</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;html lang="en"&gt;</code></td>
+                  <td>Elemen root; <code>lang</code> menyatakan bahasa utama dokumen.</td>
+                  <td>Screen reader dan mesin pencari dapat memahami bahasa halaman.</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;head&gt;</code></td>
+                  <td>Tempat metadata, judul tab, stylesheet, dan informasi dokumen.</td>
+                  <td>Informasi ini membantu browser menyiapkan halaman.</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;meta charset="UTF-8"&gt;</code></td>
+                  <td>Menentukan encoding karakter.</td>
+                  <td>Karakter seperti é, simbol, dan huruf non-Latin dapat ditampilkan dengan benar.</td>
+                </tr>
+                <tr>
+                  <td><code>meta viewport</code></td>
+                  <td>Mengatur lebar viewport agar mengikuti lebar perangkat.</td>
+                  <td>Layout tidak diperkecil seperti halaman desktop pada ponsel.</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;title&gt;</code></td>
+                  <td>Menentukan judul tab browser.</td>
+                  <td>Judul muncul di tab dan dapat digunakan mesin pencari.</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;body&gt;</code></td>
+                  <td>Menampung konten halaman yang terlihat.</td>
+                  <td>Tempat heading, paragraf, gambar, form, dan konten lainnya.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="info-box"><strong>Remember:</strong> <code>defer</code> pada tag <code>&lt;script&gt;</code>
+            berarti file JavaScript diunduh saat HTML diparsing, lalu dijalankan setelah parsing HTML selesai. Kita
+            menggunakannya agar script tidak menghalangi pembacaan dokumen.</div>
+        </section>
+
+        <section class="lesson-section reveal" id="tags-elements">
+          <p class="eyebrow">03 · HTML SYNTAX</p>
+          <h2>Tags, elements, and attributes</h2>
+          <p>Ketiga istilah ini berkaitan, tetapi artinya berbeda. <strong>Tag</strong> adalah penanda di dalam tanda
+            kurung sudut. <strong>Element</strong> adalah satu kesatuan elemen HTML. <strong>Attribute</strong>
+            memberikan informasi tambahan pada elemen.</p>
+          <figure class="diagram-card" style="margin: 22px 0;">
+            <img src="../assets/images/html-element-anatomy.svg"
+              alt="Anatomi elemen anchor HTML yang menunjukkan opening tag, attribute, content, dan closing tag."
+              style="display:block;width:100%;height:auto;border-radius:12px;">
+            <figcaption class="diagram-caption" style="padding:10px 4px 0;">
+              Gambar 3. Bagian-bagian yang membentuk sebuah HTML element.
+            </figcaption>
+          </figure>
+          <div class="anatomy-card">
+            <h3>Anatomy of an HTML element</h3>
+            <div class="element-anatomy"><span class="anatomy-tag">&lt;a</span><span
+                class="anatomy-attribute">href="/about"</span><span class="anatomy-tag">&gt;</span><span
+                class="anatomy-content">About us</span><span class="anatomy-tag">&lt;/a&gt;</span></div>
+            <div class="anatomy-labels"><span>Opening tag</span><span>Attribute</span><span>Content</span><span>Closing
+                tag</span></div>
+          </div>
+          <div class="lesson-table-wrap">
+            <table class="lesson-table">
+              <thead>
+                <tr>
+                  <th>Term</th>
+                  <th>Example</th>
+                  <th>Explanation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Opening tag</td>
+                  <td><code>&lt;p&gt;</code></td>
+                  <td>Penanda awal elemen.</td>
+                </tr>
+                <tr>
+                  <td>Closing tag</td>
+                  <td><code>&lt;/p&gt;</code></td>
+                  <td>Penanda akhir elemen; biasanya memiliki garis miring.</td>
+                </tr>
+                <tr>
+                  <td>Content</td>
+                  <td><code>Hello world</code></td>
+                  <td>Isi yang berada di antara tag.</td>
+                </tr>
+                <tr>
+                  <td>Element</td>
+                  <td><code>&lt;p&gt;Hello&lt;/p&gt;</code></td>
+                  <td>Gabungan opening tag, content, dan closing tag.</td>
+                </tr>
+                <tr>
+                  <td>Attribute</td>
+                  <td><code>href="/about"</code></td>
+                  <td>Informasi tambahan di opening tag.</td>
+                </tr>
+                <tr>
+                  <td>Void element</td>
+                  <td><code>&lt;img&gt;</code></td>
+                  <td>Elemen yang tidak memiliki closing tag dan tidak membungkus konten.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="code-block"><button class="code-copy" type="button">Copy code</button>
+            <pre><code>&lt;a href="https://example.com" target="_blank" rel="noopener noreferrer"&gt;
+    Visit example
+&lt;/a&gt;</code></pre>
+          </div>
+          <p><code>href</code>, <code>target</code>, dan <code>rel</code> adalah attribute. Mereka memberi informasi
+            tentang tujuan link, cara membuka link, dan relasi keamanan link.</p>
+          <div class="info-box"><strong>English vocabulary:</strong> <em>attribute</em> = atribut/informasi tambahan;
+            <em>content</em> = isi; <em>nested element</em> = elemen yang berada di dalam elemen lain; <em>parent</em> =
+            induk; <em>child</em> = anak.</div>
+        </section>
+
+        <section class="lesson-section reveal" id="headings-text">
+          <p class="eyebrow">04 · TEXT CONTENT</p>
+          <h2>Headings and paragraphs</h2>
+          <p>Heading digunakan untuk membangun hierarki judul. HTML menyediakan enam tingkat heading, dari
+            <code>h1</code> yang paling penting hingga <code>h6</code>. Paragraf menggunakan elemen <code>p</code>.</p>
+          <div class="before-after">
+            <div class="example-card">
+              <h4>Before · no clear hierarchy</h4>
+              <div class="preview">
+                <p style="font-size:20px;font-weight:bold">My Website</p>
+                <p style="font-size:18px;font-weight:bold">About Me</p>
+                <p>I'm learning web development.</p>
+              </div>
+            </div>
+            <div class="example-card">
+              <h4>After · semantic headings</h4>
+              <div class="preview">
+                <h1 style="font-size:25px">My Website</h1>
+                <h2 style="font-size:18px">About Me</h2>
+                <p>I'm learning web development.</p>
+              </div>
+            </div>
+          </div>
+          <div class="code-block"><button class="code-copy" type="button">Copy code</button>
+            <pre><code>&lt;h1&gt;My Website&lt;/h1&gt;
+&lt;h2&gt;About Me&lt;/h2&gt;
+&lt;p&gt;I'm learning web development.&lt;/p&gt;</code></pre>
+          </div>
+          <p><strong>Impact:</strong> Heading yang benar membuat dokumen lebih mudah dipindai manusia, membantu navigasi
+            pengguna screen reader, dan memberi struktur logis pada konten. Jangan memilih heading hanya karena ukuran
+            font-nya; tampilan bisa diatur dengan CSS.</p>
+        </section>
+
+        <section class="lesson-section reveal" id="lists">
+          <p class="eyebrow">05 · GROUPING CONTENT</p>
+          <h2>Lists: ul, ol, and li</h2>
+          <p>Gunakan <code>ul</code> untuk unordered list (daftar tanpa urutan khusus), <code>ol</code> untuk ordered
+            list (daftar berurutan), dan <code>li</code> untuk setiap list item.</p>
+          <div class="before-after">
+            <div class="example-card">
+              <h4>Before · plain text</h4>
+              <div class="preview">
+                <p>HTML, CSS, JavaScript</p>
+                <p>1. Open editor<br>2. Write code<br>3. Preview page</p>
+              </div>
+            </div>
+            <div class="example-card">
+              <h4>After · actual lists</h4>
+              <div class="preview">
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                </ul>
+                <ol>
+                  <li>Open editor</li>
+                  <li>Write code</li>
+                  <li>Preview page</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="code-block"><button class="code-copy" type="button">Copy code</button>
+            <pre><code>&lt;h2&gt;Technologies&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;HTML&lt;/li&gt;
+    &lt;li&gt;CSS&lt;/li&gt;
+    &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Workflow&lt;/h2&gt;
+&lt;ol&gt;
+    &lt;li&gt;Plan the page&lt;/li&gt;
+    &lt;li&gt;Write the HTML&lt;/li&gt;
+    &lt;li&gt;Style with CSS&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+          </div>
+          <p><strong>Impact:</strong> Browser menampilkan daftar dengan struktur yang jelas. Teknologi bantu juga dapat
+            mengumumkan bahwa konten tersebut merupakan daftar dan berapa item di dalamnya.</p>
+        </section>
+
+        <section class="lesson-section reveal" id="links-images">
+          <p class="eyebrow">06 · CONNECTING AND MEDIA</p>
+          <h2>Links and images</h2>
+          <h3>Anchor element</h3>
+          <p>Elemen <code>a</code> (anchor) membuat hyperlink. Attribute <code>href</code> menentukan alamat tujuan.</p>
+          <div class="code-block"><button class="code-copy" type="button">Copy code</button>
+            <pre><code>&lt;a href="https://developer.mozilla.org/"&gt;
+    Read HTML documentation
+&lt;/a&gt;</code></pre>
+          </div>
+          <div class="impact-row"><span class="impact-icon">↗</span>
+            <div><strong>Result in browser</strong>
+              <p><a class="demo-link" href="https://developer.mozilla.org/" target="_blank"
+                  rel="noopener noreferrer">Read HTML documentation ↗</a></p><small>Link dapat diklik untuk membuka
+                halaman tujuan.</small>
+            </div>
+          </div>
+          <h3>Image element</h3>
+          <p>Elemen <code>img</code> menampilkan gambar. Attribute <code>src</code> menentukan file gambar dan
+            <code>alt</code> memberikan deskripsi teks alternatif.</p>
+          <div class="code-block"><button class="code-copy" type="button">Copy code</button>
+            <pre><code>&lt;img
+    src="images/profile.jpg"
+    alt="Developer working at a desk"
+    width="400"
+&gt;</code></pre>
+          </div>
+          <div class="before-after">
+            <div class="example-card">
+              <h4>Before · missing alt text</h4>
+              <div class="preview">
+                <div class="broken-image">▧ Image with no description</div><small>Screen reader tidak mendapat deskripsi
+                  yang bermakna dari alt.</small>
+              </div>
+            </div>
+            <div class="example-card">
+              <h4>After · descriptive alt</h4>
+              <div class="preview">
+                <div class="image-placeholder"><span>Developer at work</span><small>Illustrative image
+                    placeholder</small></div><small>Alt menjelaskan informasi penting pada gambar.</small>
+              </div>
+            </div>
+          </div>
+          <p><strong>Impact:</strong> Alt text membantu pengguna screen reader memahami gambar dan dapat muncul ketika
+            gambar gagal dimuat. Jika gambar hanya dekorasi, gunakan <code>alt=""</code> agar teknologi bantu dapat
+            melewatinya.</p>
+        </section>
+
+        <section class="lesson-section reveal" id="semantic">
+          <p class="eyebrow">07 · MEANINGFUL STRUCTURE</p>
+          <h2>Semantic HTML</h2>
+          <p>Semantic HTML berarti memilih elemen berdasarkan makna dan perannya, bukan hanya berdasarkan tampilan.
+            Contohnya, gunakan <code>nav</code> untuk navigasi dan <code>main</code> untuk konten utama.</p>
+          <figure class="diagram-card" style="margin: 22px 0;">
+            <img src="../assets/images/semantic-html-layout.svg"
+              alt="Diagram layout semantic HTML yang terdiri dari header, nav, main, aside, dan footer."
+              style="display:block;width:100%;height:auto;border-radius:12px;">
+            <figcaption class="diagram-caption" style="padding:10px 4px 0;">
+              Gambar 4. Contoh pembagian area halaman menggunakan semantic HTML.
+            </figcaption>
+          </figure>
+          <div class="semantic-layout" aria-label="Illustration of semantic webpage regions">
+            <div class="semantic-header">header <small>Logo / introduction</small></div>
+            <div class="semantic-nav">nav <small>Navigation links</small></div>
+            <div class="semantic-columns">
+              <div class="semantic-main">main <small>Primary content</small>
+                <div class="semantic-article">article / section</div>
+              </div>
+              <div class="semantic-aside">aside <small>Related content</small></div>
+            </div>
+            <div class="semantic-footer">footer <small>Contact / copyright</small></div>
+          </div>
+          <div class="lesson-table-wrap">
+            <table class="lesson-table">
+              <thead>
+                <tr>
+                  <th>Element</th>
+                  <th>Common purpose</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>header</code></td>
+                  <td>Konten pengantar atau kepala halaman/bagian.</td>
+                </tr>
+                <tr>
+                  <td><code>nav</code></td>
+                  <td>Area yang berisi navigasi utama.</td>
+                </tr>
+                <tr>
+                  <td><code>main</code></td>
+                  <td>Konten utama halaman; umumnya satu elemen main yang terlihat.</td>
+                </tr>
+                <tr>
+                  <td><code>section</code></td>
+                  <td>Kelompok konten bertema, biasanya memiliki heading.</td>
+                </tr>
+                <tr>
+                  <td><code>article</code></td>
+                  <td>Konten mandiri yang dapat dipahami secara terpisah.</td>
+                </tr>
+                <tr>
+                  <td><code>aside</code></td>
+                  <td>Konten tambahan yang berkaitan dengan konten utama.</td>
+                </tr>
+                <tr>
+                  <td><code>footer</code></td>
+                  <td>Informasi penutup untuk halaman atau bagian.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>Before and after: same layout, clearer meaning</h3>
+          <figure class="diagram-card" style="margin: 22px 0;">
+            <img src="../assets/images/semantic-before-after.svg"
+              alt="Perbandingan generic div containers dan semantic HTML elements."
+              style="display:block;width:100%;height:auto;border-radius:12px;">
+            <figcaption class="diagram-caption" style="padding:10px 4px 0;">
+              Gambar 5. Dampak semantic HTML: struktur lebih jelas meskipun tampilan dapat serupa.
+            </figcaption>
+          </figure>
+          <div class="before-after">
+            <div class="example-card">
+              <h4>Before · generic containers</h4>
+              <pre>&lt;div class="top"&gt;...&lt;/div&gt;
+&lt;div class="menu"&gt;...&lt;/div&gt;
+&lt;div class="content"&gt;...&lt;/div&gt;
+&lt;div class="bottom"&gt;...&lt;/div&gt;</pre>
+            </div>
+            <div class="example-card">
+              <h4>After · semantic elements</h4>
+              <pre>&lt;header&gt;...&lt;/header&gt;
+&lt;nav&gt;...&lt;/nav&gt;
+&lt;main&gt;...&lt;/main&gt;
+&lt;footer&gt;...&lt;/footer&gt;</pre>
+            </div>
+          </div>
+          <p><strong>Impact:</strong> Tampilan visual bisa saja sama setelah diberi CSS, tetapi versi semantic lebih
+            mudah dipahami developer, browser, search engine, dan assistive technologies.</p>
+        </section>
+
+        <section class="lesson-section reveal" id="tables">
+          <p class="eyebrow">08 · TABULAR DATA</p>
+          <h2>HTML tables</h2>
+          <p>Gunakan tabel untuk menampilkan data yang memiliki hubungan baris dan kolom. Jangan menggunakan tabel hanya
+            untuk mengatur layout halaman; gunakan CSS layout seperti Flexbox atau Grid untuk itu.</p>
+          <div class="code-block"><button class="code-copy" type="button">Copy code</button>
+            <pre><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th scope="col"&gt;Language&lt;/th&gt;
+            &lt;th scope="col"&gt;Status&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;HTML&lt;/td&gt;
+            &lt;td&gt;Learning&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+          </div>
+          <h3>Browser preview</h3>
+          <div class="preview-table-wrap">
+            <table class="preview-table">
+              <thead>
+                <tr>
+                  <th scope="col">Language</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>HTML</td>
+                  <td><span class="status-pill">Learning</span></td>
+                </tr>
+                <tr>
+                  <td>CSS</td>
+                  <td><span class="status-pill">Learning</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Impact:</strong> Struktur tabel membuat data lebih mudah dibandingkan. Elemen <code>th</code> dan
+            attribute <code>scope</code> membantu menghubungkan header dengan sel data, terutama untuk teknologi bantu.
+          </p>
+        </section>
+
+        <section class="lesson-section reveal" id="forms">
+          <p class="eyebrow">09 · USER INPUT</p>
+          <h2>HTML forms</h2>
+          <p>Form digunakan untuk menerima data dari pengguna, misalnya login, registrasi, pencarian, atau pengiriman
+            pesan.</p>
+          <div class="code-block"><button class="code-copy" type="button">Copy code</button>
+            <pre><code>&lt;form action="/register" method="post"&gt;
+    &lt;label for="email"&gt;Email address&lt;/label&gt;
+    &lt;input id="email" name="email" type="email" required&gt;
+    &lt;button type="submit"&gt;Register&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+          </div>
+          <div class="form-demo">
+            <h3>Visual example: registration form</h3>
+            <label for="demo-email">Email address</label>
+            <input id="demo-email" type="email" placeholder="you@example.com" disabled>
+            <button type="button" disabled>Register (preview only)</button>
+          </div>
+          <div class="lesson-table-wrap">
+            <table class="lesson-table">
+              <thead>
+                <tr>
+                  <th>Attribute / element</th>
+                  <th>Meaning</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>action</code></td>
+                  <td>Alamat tujuan untuk memproses data form.</td>
+                </tr>
+                <tr>
+                  <td><code>method</code></td>
+                  <td>Metode HTTP, biasanya GET atau POST.</td>
+                </tr>
+                <tr>
+                  <td><code>label</code></td>
+                  <td>Nama/keterangan yang menjelaskan input.</td>
+                </tr>
+                <tr>
+                  <td><code>name</code></td>
+                  <td>Nama field yang digunakan saat data dikirim.</td>
+                </tr>
+                <tr>
+                  <td><code>type="email"</code></td>
+                  <td>Memberi tipe input email dan validasi dasar browser.</td>
+                </tr>
+                <tr>
+                  <td><code>required</code></td>
+                  <td>Menandai field yang wajib diisi.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Impact:</strong> Form mengubah halaman dari sekadar informasi menjadi sarana interaksi. Validasi
+            HTML membantu pengguna memperbaiki input sebelum dikirim, tetapi validasi server tetap diperlukan untuk
+            keamanan.</p>
+        </section>
+
+        <section class="lesson-section reveal" id="div-span">
+          <p class="eyebrow">10 · GENERIC CONTAINERS</p>
+          <h2>What are div and span?</h2>
+          <p><code>div</code> dan <code>span</code> adalah generic containers. Keduanya tidak memberi makna khusus pada
+            konten; biasanya digunakan ketika kita membutuhkan elemen pembungkus untuk styling atau manipulasi dengan
+            JavaScript.</p>
+          <div class="before-after">
+            <div class="example-card">
+              <h4>div · block-level container</h4>
+              <div class="preview">
+                <div class="demo-div">First div block</div>
+                <div class="demo-div">Second div block</div>
+              </div>
+            </div>
+            <div class="example-card">
+              <h4>span · inline container</h4>
+              <div class="preview">
+                <p>This is <span class="demo-span">highlighted text</span> inside a sentence.</p>
+              </div>
+            </div>
+          </div>
+          <div class="code-block"><button class="code-copy" type="button">Copy code</button>
+            <pre><code>&lt;div class="profile-card"&gt;
+    &lt;h2&gt;Dendi&lt;/h2&gt;
+    &lt;p&gt;Learning &lt;span class="highlight"&gt;HTML&lt;/span&gt; and CSS.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+          <p><strong>Impact:</strong> <code>div</code> biasanya memulai baris/blok baru, sedangkan <code>span</code>
+            tetap berada di dalam alur teks. Pilih elemen semantic jika tersedia; gunakan div/span ketika tidak ada
+            elemen semantic yang lebih tepat.</p>
+        </section>
+
+        <section class="lesson-section reveal" id="reading-code">
+          <p class="eyebrow">11 · UNDERSTAND THE PROJECT</p>
+          <h2>How to read the code in this DevLibrary page</h2>
+          <p>Kamu mungkin melihat beberapa elemen yang belum familiar pada file lesson. Itu bukan bahasa baru; sebagian
+            adalah HTML standar, sebagian lagi adalah attribute untuk aksesibilitas, dan sebagian adalah class yang kita
+            buat sendiri untuk CSS.</p>
+          <div class="lesson-table-wrap">
+            <table class="lesson-table">
+              <thead>
+                <tr>
+                  <th>Code</th>
+                  <th>Meaning</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>&lt;header&gt;</code></td>
+                  <td>Bagian pengantar/kepala halaman. Di project ini membungkus navbar.</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;nav&gt;</code></td>
+                  <td>Bagian navigasi yang berisi link.</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;main&gt;</code></td>
+                  <td>Konten utama halaman.</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;article&gt;</code></td>
+                  <td>Konten mandiri; di sini membungkus isi materi.</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;section&gt;</code></td>
+                  <td>Kelompok materi dengan topik tertentu.</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;aside&gt;</code></td>
+                  <td>Konten pendamping; di sini menjadi daftar isi halaman.</td>
+                </tr>
+                <tr>
+                  <td><code>class="lesson-section"</code></td>
+                  <td>Class buatan project kita. CSS menggunakannya untuk memberi style.</td>
+                </tr>
+                <tr>
+                  <td><code>id="overview"</code></td>
+                  <td>ID unik pada elemen. Link seperti <code>href="#overview"</code> dapat melompat ke bagian ini.</td>
+                </tr>
+                <tr>
+                  <td><code>aria-label</code></td>
+                  <td>Nama aksesibel yang membantu teknologi bantu menjelaskan fungsi suatu region/control.</td>
+                </tr>
+                <tr>
+                  <td><code>defer</code></td>
+                  <td>Menunda eksekusi script eksternal sampai parsing HTML selesai.</td>
+                </tr>
+                <tr>
+                  <td><code>reveal</code></td>
+                  <td>Class buatan project. JavaScript menambahkan class lain ketika bagian masuk ke viewport untuk
+                    animasi.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="info-box"><strong>Important distinction:</strong> <code>class</code> dan <code>id</code> bukan tag
+            HTML. Keduanya adalah attributes. Nama seperti <code>lesson-section</code>, <code>reveal</code>, dan
+            <code>section-shell</code> adalah nama yang kita tentukan sendiri, bukan keyword khusus HTML.</div>
+          <h3>HTML entities: why do we write &amp;lt; instead of &lt;?</h3>
+          <p>Ketika kita ingin memperlihatkan contoh kode HTML di dalam halaman, karakter tertentu harus ditulis sebagai
+            HTML entity supaya browser menampilkannya sebagai teks, bukan memprosesnya sebagai tag.</p>
+          <div class="lesson-table-wrap">
+            <table class="lesson-table">
+              <thead>
+                <tr>
+                  <th>Entity in source</th>
+                  <th>Character shown</th>
+                  <th>English term</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>&amp;lt;</code></td>
+                  <td><code>&lt;</code></td>
+                  <td>Less-than sign</td>
+                </tr>
+                <tr>
+                  <td><code>&amp;gt;</code></td>
+                  <td><code>&gt;</code></td>
+                  <td>Greater-than sign</td>
+                </tr>
+                <tr>
+                  <td><code>&amp;amp;</code></td>
+                  <td><code>&amp;</code></td>
+                  <td>Ampersand</td>
+                </tr>
+                <tr>
+                  <td><code>&amp;quot;</code></td>
+                  <td><code>"</code></td>
+                  <td>Quotation mark</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Contoh: jika ingin menampilkan tag <code>&lt;h1&gt;</code> sebagai contoh di halaman, source HTML-nya harus
+            berisi <code>&amp;lt;h1&amp;gt;</code>. Browser kemudian menampilkan karakter <code>&lt;</code> dan
+            <code>&gt;</code> kepada pembaca.</p>
+        </section>
+
+        <section class="lesson-section reveal" id="practice">
+          <p class="eyebrow">12 · PUT IT INTO PRACTICE</p>
+          <h2>Practice: build a personal profile page</h2>
+          <p>Coba buat halaman profil sederhana menggunakan elemen yang sudah dipelajari.</p>
+          <ol>
+            <li>Buat kerangka dokumen HTML lengkap.</li>
+            <li>Tambahkan satu <code>h1</code> untuk nama profil.</li>
+            <li>Tambahkan paragraf perkenalan menggunakan <code>p</code>.</li>
+            <li>Tambahkan gambar dengan deskripsi <code>alt</code> yang sesuai.</li>
+            <li>Buat daftar tiga teknologi menggunakan <code>ul</code> dan <code>li</code>.</li>
+            <li>Tambahkan link ke dokumentasi HTML.</li>
+            <li>Gunakan elemen semantic seperti <code>header</code>, <code>main</code>, dan <code>footer</code>.</li>
+          </ol>
+          <div class="info-box"><strong>Remember This:</strong> HTML memberikan struktur dan makna. Pilih elemen
+            berdasarkan fungsi kontennya, bukan sekadar tampilan default yang diberikan browser.</div>
+        </section>
+
+        <nav class="chapter-nav" aria-label="Chapter navigation">
+          <a href="Welcome_to_the_Full_Stack_Engineer_Path.html">← Previous chapter</a>
+          <a href="Fundamentals_of_CSS.html">Next: Fundamentals of CSS →</a>
+        </nav>
+      </article>
+
+      <aside class="lesson-aside">
+        <h3>ON THIS PAGE</h3>
+        <nav aria-label="Table of contents">
+          <a href="#overview">What is HTML?</a>
+          <a href="#document-structure">Document structure</a>
+          <a href="#tags-elements">Tags and attributes</a>
+          <a href="#headings-text">Headings and paragraphs</a>
+          <a href="#lists">Lists</a>
+          <a href="#links-images">Links and images</a>
+          <a href="#semantic">Semantic HTML</a>
+          <a href="#tables">HTML tables</a>
+          <a href="#forms">Forms</a>
+          <a href="#div-span">div and span</a>
+          <a href="#reading-code">Reading this project</a>
+          <a href="#practice">Practice task</a>
+        </nav>
+      </aside>
+    </div>
+    <div class="section-shell" style="padding-bottom:24px;">
+      <p class="fine-print">Image assets for this lesson are stored separately in <code>../assets/images/</code>. Copy
+        the supplied SVG files into that folder to display all diagrams.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-shell footer-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">D</span>
+        <span>Dev<span class="brand-accent">Library</span><small>KEEP LEARNING. KEEP BUILDING.</small></span>
+      </a>
+      <p>A living document of a developer's learning journey.</p>
+      <a class="back-top" href="#top">Back to top ↑</a>
+    </div>
+    <div class="section-shell footer-bottom">
+      <span>Built with HTML, CSS &amp; JavaScript</span>
+      <span>Personal learning project · 2026</span>
+    </div>
+  </footer>
+</body>
+
+</html>

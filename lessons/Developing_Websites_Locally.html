@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Developing Websites Locally | DevLibrary</title><link rel="stylesheet" href="../assets/css/style.css"><script src="../assets/js/app.js" defer></script></head><body id="top">
+<header class="site-header">
+    <nav class="navbar section-shell" aria-label="Main navigation">
+        <a class="brand" href="../index.html">
+            <span class="brand-mark">D</span>
+            <span>
+                Dev<span class="brand-accent">Library</span>
+                <small>PERSONAL KNOWLEDGE BASE</small>
+            </span>
+        </a>
+
+        <button class="menu-toggle" type="button"
+                aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#learning-path">Learning Path</a>
+            <a href="../lessons/Fundamentals_of_HTML.html">HTML</a>
+            <a href="../lessons/Fundamentals_of_CSS.html">CSS</a>
+            <a class="nav-cta" href="../index.html#learning-path">All Chapters ↗</a>
+        </div>
+    </nav>
+</header><main><header class="lesson-hero"><div class="section-shell"><p class="breadcrumb"><a href="../index.html">Home</a> / Learning Path / Developing Websites Locally</p><p class="eyebrow">CHAPTER 04 · LOCAL DEVELOPMENT</p><h1>Developing Websites Locally</h1><p>Set up a local project, preview it in a browser, and debug issues before publishing.</p></div></header>
+<div class="section-shell lesson-layout"><article class="lesson-content"><section class="lesson-section reveal" id="workflow"><h2>Local development workflow</h2><ol><li>Buat folder project.</li><li>Buka folder melalui VS Code.</li><li>Buat file HTML, CSS, dan JavaScript.</li><li>Jalankan dengan local development server.</li><li>Periksa hasil melalui browser Developer Tools.</li><li>Perbaiki error dan uji kembali.</li></ol></section><section class="lesson-section reveal" id="folders"><div class="code-block"><button class="code-copy" type="button">Copy code</button><pre><code>my-website/
+├── index.html
+├── components/
+│   ├── navbar.html
+│   └── footer.html
+├── assets/
+│   ├── css/style.css
+│   ├── js/app.js
+│   └── images/
+└── lessons/
+    ├── Fundamentals_of_HTML.html
+    └── Fundamentals_of_CSS.html</code></pre></div><p>Pemisahan folder membantu project tetap teratur saat halaman dan asset bertambah.</p></section><section class="lesson-section reveal" id="terminal"><h2>Useful terminal commands</h2><div class="lesson-table-wrap"><table class="lesson-table"><tr><th>Command</th><th>Function</th></tr><tr><td><code>pwd</code></td><td>Menampilkan direktori saat ini.</td></tr><tr><td><code>ls</code></td><td>Menampilkan isi direktori.</td></tr><tr><td><code>cd folder</code></td><td>Masuk ke direktori.</td></tr><tr><td><code>cd ..</code></td><td>Naik satu tingkat.</td></tr><tr><td><code>mkdir name</code></td><td>Membuat folder.</td></tr><tr><td><code>touch index.html</code></td><td>Membuat file kosong pada macOS/Linux.</td></tr></table></div></section><section class="lesson-section reveal" id="debugging"><h2>Debugging basics</h2><p>Developer Tools membantu memeriksa DOM, CSS, network requests, dan JavaScript errors. Console menampilkan pesan error; Elements/Inspector membantu memeriksa struktur dan style.</p><div class="info-box"><strong>Tip:</strong> Periksa nama file, line number, selector, dan path asset sebelum mengubah banyak kode.</div></section><nav class="chapter-nav"><span></span><a href="../index.html#learning-path">Back to learning path →</a></nav></article><aside class="lesson-aside"><h3>ON THIS PAGE</h3><nav><a href="#workflow">Local development workflow</a><a href="#folders">Folder structure</a><a href="#terminal">Useful terminal commands</a><a href="#debugging">Browser DevTools and debugging</a></nav></aside></div></main><footer class="site-footer">
+    <div class="section-shell footer-inner">
+        <a class="brand" href="../index.html">
+            <span class="brand-mark">D</span>
+            <span>
+                Dev<span class="brand-accent">Library</span>
+                <small>KEEP LEARNING. KEEP BUILDING.</small>
+            </span>
+        </a>
+
+        <p>A living document of a developer's learning journey.</p>
+        <a class="back-top" href="#top">Back to top ↑</a>
+    </div>
+
+    <div class="section-shell footer-bottom">
+        <span>Built with HTML, CSS &amp; JavaScript</span>
+        <span>Personal learning project · 2026</span>
+    </div>
+</footer></body></html>

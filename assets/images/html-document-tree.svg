@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+<title id="title">HTML document tree</title>
+<desc id="desc">Parent elements contain child elements; the browser reads this hierarchy.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#111b2e"/>
+    <stop offset="1" stop-color="#0a1020"/>
+  </linearGradient>
+  <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#a78bfa"/>
+    <stop offset="1" stop-color="#7058d8"/>
+  </linearGradient>
+  <style>
+    .title { font: 700 32px Inter, Arial, sans-serif; fill: #f4f6fc; }
+    .subtitle { font: 400 17px Inter, Arial, sans-serif; fill: #aebbd0; }
+    .label { font: 700 23px Inter, Arial, sans-serif; fill: #f8f9ff; }
+    .small { font: 400 16px Inter, Arial, sans-serif; fill: #c0cbe0; }
+    .tiny { font: 600 13px Inter, Arial, sans-serif; fill: #aebbd0; }
+    .box { fill: #17243a; stroke: #3b4b68; stroke-width: 2; }
+    .purple { fill: #29234e; stroke: #a78bfa; stroke-width: 2; }
+    .green { fill: #15352f; stroke: #63d7aa; stroke-width: 2; }
+    .yellow { fill: #3a3220; stroke: #f4c96b; stroke-width: 2; }
+    .line { stroke: #7183a1; stroke-width: 3; fill: none; }
+  </style>
+</defs>
+<rect width="1200" height="560" rx="24" fill="url(#bg)"/>
+<text x="58" y="70" class="title">HTML document tree</text>
+<text x="58" y="105" class="subtitle">Parent elements contain child elements; the browser reads this hierarchy.</text>
+
+<rect x="470" y="150" width="260" height="62" rx="12" class="purple"/>
+<text x="600" y="190" text-anchor="middle" class="label">&lt;html&gt;</text>
+<path d="M600 212 V250 M300 250 H900 M300 250 V285 M900 250 V285" class="line"/>
+<rect x="160" y="285" width="280" height="62" rx="12" class="green"/>
+<text x="300" y="325" text-anchor="middle" class="label">&lt;head&gt;</text>
+<rect x="760" y="285" width="280" height="62" rx="12" class="yellow"/>
+<text x="900" y="325" text-anchor="middle" class="label">&lt;body&gt;</text>
+<path d="M300 347 V380 M900 347 V380 M810 380 H990 M810 380 V410 M990 380 V410" class="line"/>
+<rect x="185" y="380" width="230" height="58" rx="10" class="box"/>
+<text x="300" y="417" text-anchor="middle" class="small">&lt;meta&gt; · &lt;title&gt;</text>
+<rect x="700" y="410" width="220" height="58" rx="10" class="box"/>
+<text x="810" y="447" text-anchor="middle" class="small">&lt;h1&gt;</text>
+<rect x="940" y="410" width="150" height="58" rx="10" class="box"/>
+<text x="1015" y="447" text-anchor="middle" class="small">&lt;p&gt;</text>
+<text x="300" y="490" text-anchor="middle" class="tiny">DOCUMENT METADATA</text>
+<text x="900" y="510" text-anchor="middle" class="tiny">VISIBLE PAGE CONTENT</text>
+
+</svg>

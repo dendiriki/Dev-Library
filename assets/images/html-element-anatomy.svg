@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+<title id="title">Anatomy of an HTML element</title>
+<desc id="desc">An opening tag, attributes, content, and closing tag work together as one element.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#111b2e"/>
+    <stop offset="1" stop-color="#0a1020"/>
+  </linearGradient>
+  <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#a78bfa"/>
+    <stop offset="1" stop-color="#7058d8"/>
+  </linearGradient>
+  <style>
+    .title { font: 700 32px Inter, Arial, sans-serif; fill: #f4f6fc; }
+    .subtitle { font: 400 17px Inter, Arial, sans-serif; fill: #aebbd0; }
+    .label { font: 700 23px Inter, Arial, sans-serif; fill: #f8f9ff; }
+    .small { font: 400 16px Inter, Arial, sans-serif; fill: #c0cbe0; }
+    .tiny { font: 600 13px Inter, Arial, sans-serif; fill: #aebbd0; }
+    .box { fill: #17243a; stroke: #3b4b68; stroke-width: 2; }
+    .purple { fill: #29234e; stroke: #a78bfa; stroke-width: 2; }
+    .green { fill: #15352f; stroke: #63d7aa; stroke-width: 2; }
+    .yellow { fill: #3a3220; stroke: #f4c96b; stroke-width: 2; }
+    .line { stroke: #7183a1; stroke-width: 3; fill: none; }
+  </style>
+</defs>
+<rect width="1200" height="560" rx="24" fill="url(#bg)"/>
+<text x="58" y="70" class="title">Anatomy of an HTML element</text>
+<text x="58" y="105" class="subtitle">An opening tag, attributes, content, and closing tag work together as one element.</text>
+
+<rect x="90" y="210" width="1020" height="150" rx="18" class="box"/>
+<text x="145" y="300" class="label" fill="#a78bfa">&lt;a</text>
+<text x="245" y="300" class="label" fill="#63d7aa">href="/about"</text>
+<text x="455" y="300" class="label" fill="#a78bfa">&gt;</text>
+<text x="500" y="300" class="label">About us</text>
+<text x="700" y="300" class="label" fill="#a78bfa">&lt;/a&gt;</text>
+<path d="M160 315 V400 H110" class="line"/>
+<path d="M335 315 V400 H335" class="line"/>
+<path d="M565 315 V400 H565" class="line"/>
+<path d="M750 315 V400 H750" class="line"/>
+<text x="110" y="435" class="small">Opening tag</text>
+<text x="335" y="435" text-anchor="middle" class="small">Attribute</text>
+<text x="565" y="435" text-anchor="middle" class="small">Content</text>
+<text x="750" y="435" text-anchor="middle" class="small">Closing tag</text>
+<text x="600" y="500" text-anchor="middle" class="tiny">TOGETHER, THESE PARTS FORM ONE HTML ELEMENT</text>
+
+</svg>

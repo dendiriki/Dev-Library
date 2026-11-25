@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Fundamentals of CSS | DevLibrary</title><link rel="stylesheet" href="../assets/css/style.css"><script src="../assets/js/app.js" defer></script></head><body id="top">
+<header class="site-header">
+    <nav class="navbar section-shell" aria-label="Main navigation">
+        <a class="brand" href="../index.html">
+            <span class="brand-mark">D</span>
+            <span>
+                Dev<span class="brand-accent">Library</span>
+                <small>PERSONAL KNOWLEDGE BASE</small>
+            </span>
+        </a>
+
+        <button class="menu-toggle" type="button"
+                aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#learning-path">Learning Path</a>
+            <a href="../lessons/Fundamentals_of_HTML.html">HTML</a>
+            <a href="../lessons/Fundamentals_of_CSS.html">CSS</a>
+            <a class="nav-cta" href="../index.html#learning-path">All Chapters ↗</a>
+        </div>
+    </nav>
+</header><main><header class="lesson-hero"><div class="section-shell"><p class="breadcrumb"><a href="../index.html">Home</a> / Learning Path / Fundamentals of CSS</p><p class="eyebrow">CHAPTER 03 · CSS FOUNDATIONS</p><h1>Fundamentals of CSS</h1><p>Understand CSS rules, selectors, cascade, specificity, inheritance, and the box model.</p></div></header>
+<div class="section-shell lesson-layout"><article class="lesson-content"><section class="lesson-section reveal" id="overview"><h2>What is CSS?</h2><p><strong>CSS (Cascading Style Sheets)</strong> mengatur presentasi visual dokumen HTML: warna, typography, spacing, border, dan layout.</p><div class="info-box"><strong>Remember:</strong> HTML = structure and meaning. CSS = presentation and layout.</div></section><section class="lesson-section reveal" id="syntax"><h2>CSS syntax</h2><p>Aturan CSS terdiri dari selector dan declaration block. Declaration berisi property dan value.</p><div class="code-block"><button class="code-copy" type="button">Copy code</button><pre><code>selector {
+  property: value;
+}
+
+/* Example */
+p {
+  color: navy;
+  font-size: 16px;
+}</code></pre></div><p>Selector memilih elemen; property menentukan aspek yang diubah; value menentukan nilainya.</p></section><section class="lesson-section reveal" id="selectors"><h2>CSS selectors</h2><div class="lesson-table-wrap"><table class="lesson-table"><tr><th>Type</th><th>Syntax</th><th>Meaning</th></tr><tr><td>Type</td><td><code>p</code></td><td>Semua elemen p.</td></tr><tr><td>Class</td><td><code>.card</code></td><td>Elemen dengan class card.</td></tr><tr><td>ID</td><td><code>#header</code></td><td>Elemen dengan id header.</td></tr><tr><td>Descendant</td><td><code>.card p</code></td><td>p di dalam .card.</td></tr><tr><td>Child</td><td><code>.menu &gt; a</code></td><td>a sebagai anak langsung .menu.</td></tr><tr><td>Group</td><td><code>h1, h2</code></td><td>Beberapa selector berbagi aturan.</td></tr><tr><td>Pseudo-class</td><td><code>a:hover</code></td><td>Keadaan khusus elemen.</td></tr></table></div><div class="code-block"><button class="code-copy" type="button">Copy code</button><pre><code>.card { padding: 20px; }
+.card p { color: slategray; }
+.card > h2 { margin-top: 0; }
+a:hover { color: rebeccapurple; }</code></pre></div></section><section class="lesson-section reveal" id="cascade"><h2>Cascade, specificity, and inheritance</h2><p>Ketika beberapa aturan cocok pada elemen yang sama, browser menentukan deklarasi yang berlaku berdasarkan cascade. Specificity adalah bobot selector untuk menyelesaikan konflik.</p><div class="info-box"><strong>Gambaran umum:</strong> ID selector biasanya lebih spesifik daripada class/attribute/pseudo-class; class lebih spesifik daripada type selector. Cascade juga mempertimbangkan origin, importance, dan layer.</div><div class="code-block"><button class="code-copy" type="button">Copy code</button><pre><code>p { color: gray; }
+.note { color: royalblue; }
+#warning { color: crimson; }</code></pre></div><p>Jika elemen memiliki class="note" dan id="warning", deklarasi ID biasanya menang untuk properti color. Inheritance berarti beberapa properti seperti color dan font-family dapat diwariskan dari parent ke child.</p></section><section class="lesson-section reveal" id="box-model"><h2>CSS box model</h2><p>Setiap elemen dapat dipahami sebagai kotak yang terdiri dari content, padding, border, dan margin.</p><div class="before-after"><div class="example-card"><h4>Box model layers</h4><div class="preview" style="background:#e9bd73;text-align:center"><b>Margin</b><div style="background:#9c7bd7;padding:12px;margin:7px"><b>Border</b><div style="background:#79b9a5;padding:12px;margin-top:7px"><b>Padding</b><div style="background:white;color:#1c2940;padding:14px;margin-top:7px">Content</div></div></div></div></div><div class="example-card"><h4>Recommended reset</h4><pre>* { box-sizing: border-box; }
+.card {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid;
+}</pre></div></div><p><code>border-box</code> membuat width/height mencakup content, padding, dan border. Margin tetap di luar.</p></section><section class="lesson-section reveal" id="before-after"><h2>Before and after: applying CSS</h2><div class="before-after"><div class="example-card"><h4>Before · no custom CSS</h4><div class="preview"><h3 style="color:#202b40">My learning notes</h3><p>HTML and CSS are the foundation of the web.</p><button>Read more</button></div></div><div class="example-card"><h4>After · styled component</h4><div class="preview preview-dark"><h3 style="color:#c4b5fd">My learning notes</h3><p>HTML and CSS are the foundation of the web.</p><button style="margin-top:10px;padding:7px 11px;border:0;border-radius:5px;background:#8065ed;color:white">Read more</button></div></div></div><p>HTML yang sama dapat terlihat berbeda ketika CSS mengubah color, background, padding, border-radius, dan typography.</p></section><section class="lesson-section reveal" id="practice"><h2>Practice: style a profile card</h2><ol><li>Buat class <code>.profile-card</code>.</li><li>Atur padding, background, border, dan border-radius.</li><li>Gunakan class selector untuk heading dan paragraph.</li><li>Tambahkan pseudo-class hover pada link atau button.</li></ol><div class="info-box"><strong>Remember This:</strong> Selector menentukan elemen yang dipilih. Cascade dan specificity membantu browser memutuskan aturan yang berlaku.</div></section><nav class="chapter-nav"><a href="Fundamentals_of_HTML.html">← Fundamentals of HTML</a><a href="Developing_Websites_Locally.html">Developing Websites Locally →</a></nav></article><aside class="lesson-aside"><h3>ON THIS PAGE</h3><nav><a href="#overview">Overview</a><a href="#syntax">CSS syntax</a><a href="#selectors">Selectors</a><a href="#cascade">Cascade, specificity, inheritance</a><a href="#box-model">The box model</a><a href="#before-after">Before and after styling</a><a href="#practice">Practice task</a></nav></aside></div></main><footer class="site-footer">
+    <div class="section-shell footer-inner">
+        <a class="brand" href="../index.html">
+            <span class="brand-mark">D</span>
+            <span>
+                Dev<span class="brand-accent">Library</span>
+                <small>KEEP LEARNING. KEEP BUILDING.</small>
+            </span>
+        </a>
+
+        <p>A living document of a developer's learning journey.</p>
+        <a class="back-top" href="#top">Back to top ↑</a>
+    </div>
+
+    <div class="section-shell footer-bottom">
+        <span>Built with HTML, CSS &amp; JavaScript</span>
+        <span>Personal learning project · 2026</span>
+    </div>
+</footer></body></html>
